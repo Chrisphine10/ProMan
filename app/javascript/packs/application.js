@@ -19,6 +19,7 @@ require("channels")
 import "bootstrap";
 import "./application.scss";
 
-//= require jquery3
+//= require_tree .
+//= require jquery 
 //= require popper
 //= require bootstrap
