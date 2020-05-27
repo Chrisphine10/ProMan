@@ -41,10 +41,10 @@ html {
 </head>
   <body style="background: #fffff2;">
   <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
+      <p class="alert alert-success" style="margin-bottom: 0px;"><%= notice %></p>
     <% end %>
     <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
+      <p class="alert alert-danger" style="margin-bottom: 0px;"><%= alert %></p>
     <% end %>
       <nav class="navbar fixed-top position-sticky navbar-expand-lg navbar-dark" style="background: #242582;">
         <a class="navbar-brand" href="/">ProMan</a>
@@ -83,7 +83,7 @@ html {
         <% end %>
         </div>
     </nav>
-  <div class="yield">
+  <div class="yield m-auto">
     
 	<%= yield %>
 
