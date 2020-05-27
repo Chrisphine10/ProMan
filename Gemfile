@@ -36,6 +36,7 @@ gem 'gravatar_image_tag', '~> 1.2'
 gem 'jquery-rails', '~> 4.4'
 gem 'wysiwyg-rails', '~> 3.1'
 gem 'public_activity', github: 'pokonski/public_activity'
+gem 'bootstrap', '~> 4.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,6 +49,12 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+
+  gem 'better_errors', '~> 2.7', '>= 2.7.1'
+  gem 'spring', '~> 2.1'
+  gem 'spring-watcher-listen', '~> 2.0', '>= 2.0.1'
+  gem 'guard', '~> 2.16', '>= 2.16.2'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

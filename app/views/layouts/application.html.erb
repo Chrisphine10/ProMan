@@ -1,15 +1,76 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Proman</title>
+    <title>ProMan</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
+<!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</head>
   <body>
-    <%= yield %>
-  </body>
+      <nav class="navbar fixed-top position-sticky shadow-lg navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">ProMan</a>
+		<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end nav-justified" id="navbarSupportedContent">
+
+		<% if current_user %>
+		 <!-- Navigation -->
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+               Get Started
+              </a>
+              <div class="dropdown-positioner">
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+              
+                      <!-- Heading -->
+                      <h6 class="dropdown-header text-uppercase mb-3">
+                        New
+                      </h6>
+
+                      <!-- Links -->
+                      <a class="dropdown-item" href="./pricing.html">
+                        Card
+                      </a>
+					   <a class="dropdown-item" href="./pricing.html">
+                        Board
+                      </a>
+      
+                </div>
+              </div>
+            </li>
+          </ul>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "ml-lg-5 mb-2 btn btn-outline-secondary", data: { confirm: "Are you sure?" } %>
+   
+        <% else %>
+          <%= link_to "Log In", new_user_session_path, class: 'ml-lg-1 mb-2 btn btn-outline-secondary' %>
+          <%= link_to "Sign Up", new_user_registration_path, class: 'ml-lg-1 mb-2 btn btn-outline-secondary' %>
+        <% end %>
+        </div>
+    </nav>
+  <div class="yield">
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+	<%= yield %>
+
+  </div>
+</body>
 </html>
