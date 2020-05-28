@@ -1,6 +1,9 @@
-<div class="container">
+<div class="container-fluid mt-md-5 mb-5">
 <div class="row">
-<div class="col p-5" style="background: white;">
+<div class="col-lg-3"></div>
+<div class="col-lg-6">
+<div class="card">
+<div class="card-body w-auto align-self-center">
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
@@ -38,7 +41,9 @@
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
-
 </div>
+</div>
+</div>
+<div class="col-lg-3"></div>
 </div>
 </div>

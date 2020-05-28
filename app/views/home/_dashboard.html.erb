@@ -1,13 +1,50 @@
-<section class="container-lg">
+<section class="container mt-2 mb-2">
 <div class="row">
-<div class="col-4" style="background: red; height: 1000px;">
-
+<div class="col-12 text-center">
+<p>
+	Welcome <%= current_user.name.partition(" ").first %> 👋
+	</p>
+	<hr>
 </div>
-<div class="col-4" style="background: blue; height: 1000px;">
-
 </div>
-<div class="col-4" style="background: yellow; height: 1000px;">
-
+<div class="row">
+<div class="col-4" style="border-right: 1px solid grey;">
+<div>
+My Projects <i class="fa fa-plus-square" aria-hidden="true" style="float:right;"></i>
+<hr>
+</div>
+<div class="card">
+<div class="card-body p-2 text-center">
+<h5>Project Name</h5>
+<h6>Team Name</h6>
+<p class="m-0">Created by Name</p>
+</div>
+</div>
+</div>
+<div class="col-4" style="border-right: 1px solid grey;">
+<div>
+My Teams <i class="fa fa-plus-square" aria-hidden="true" style="float:right;"></i>
+<hr>
+</div>
+<div class="card">
+<div class="card-body p-2 text-center">
+<h5>Team Name</h5>
+<h6>0 members</h6>
+<p class="m-0">Created by Names</p>
+</div>
+</div>
+</div>
+<div class="col-4" style="">
+<div>
+My Activities <i class="fa fa-plus-square" aria-hidden="true" style="float:right;"></i>
+<hr>
+</div>
+<div class="card">
+<div class="card-body">
+<h6>Name</h6>
+<p class="m-0">Task</p>
+</div>
+</div>
 </div>
 </div>
 </section>
