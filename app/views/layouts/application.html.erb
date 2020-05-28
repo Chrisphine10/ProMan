@@ -58,19 +58,19 @@ html {
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="pagesDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-               Account
+               <%= current_user.name.partition(" ").first %>
               </a>
               <div class="dropdown-positioner">
                 <div class="dropdown-menu dropdown-left-manual" role="menu" aria-labelledby="pagesDropdown">
               
                       <!-- Heading -->
-                      <h6 class="dropdown-header text-uppercase mb-3">
-                        <%= current_user.name.partition(" ").first %>
-                      </h6>
+                      <p class="dropdown-header text-uppercase">
+					  Setting
+                      </p>
 
                       <!-- Links -->
-                      <%= link_to " Edit", edit_user_registration_path, class: "dropdown-item" %>
-                    <%= link_to " Log Out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+					<%= link_to " My profile", edit_user_registration_path, class: "p-2 fa fa-user dropdown-item" %>
+                    <%= link_to " Logout", destroy_user_session_path, :method => :delete, class: "p-2 fa fa-power-off dropdown-item" %>
  
       
                 </div>
