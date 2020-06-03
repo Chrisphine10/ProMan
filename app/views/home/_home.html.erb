@@ -9,7 +9,7 @@ sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
 
 <div class="container">
-<div class="row" style="height: 1000px;">
+<div class="row">
 <div class="col-md-8 p-5" style="text-align: center;">
 <h3>Welcome to ProMan</h3>
 <p>
@@ -31,10 +31,10 @@ sunt in culpa qui officia deserunt mollit anim id est laborum.
 </div>
 <%= render 'dashboard'%>
 <% else%>
-<div class="col-md-4 p-5" style="text-align: center;">
+<div class="col-md-4 p-lg-5" style="text-align: center;">
 <h3>Join us today</h3>
 <p class="p-3">
- <%= link_to "Sign Up", new_user_registration_path, class: 'ml-lg-1 mb-2 btn btn-outline-primary' %>
+ <%= link_to "Sign Up", new_user_registration_path, class: 'ml-lg-1 mb-2 btn btn-primary' %>
  </p>
 </div>
 <% end %>
