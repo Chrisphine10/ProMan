@@ -15,7 +15,8 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "npm-install-webpack-plugin": "^4.0.5",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^2.11.5"
   }
 }
