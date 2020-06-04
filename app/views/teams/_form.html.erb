@@ -1,13 +1,54 @@
+<div class="field">
+	<div class="control">
+		<label class="label">Team Name</label>
+		<input type="text" class="form-control">
+	</div>
+</div>
+<hr>
+<div class="content">
+	<h4>Invite users</h4>
+	<p>Invite users to create an account and join this team.
+	Each user will be sent a confirmation email in which
+	they can supply their own unique password.
+	</p>
+</div>
 
-<%= simple_form_for(@team) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="field">
+	<div class="control">
+		<label class="label">Name</label>
+		<input type="text" class="form-control">
+	</div>
+</div>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-  </div>
+<div class="field">
+	<div class="control">
+		<label class="label">Email</label>
+		<input type="text" class="form-control">
+	</div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<input type="hidden" value="<%= current_user.id %>">
+
+<div class="field">
+	<div class="control">
+		<button class="btn btn-primary mt-2">Remove</button>
+	</div>
+</div>
+<hr>
+
+<div class="field">
+	<div class="control">
+		<button class="btn-sm btn-primary">Add User</button>
+	</div>
+</div>
+<hr>
+<div class="field">
+	<div class="control">
+		<% if current_page?(new_team_path) %>
+			<button class="btn btn-success">Create Team</button>
+		<% else %>
+			<button class="btn btn-success">Save Team</button>
+		<% end %>
+	</div>
+
+</div>

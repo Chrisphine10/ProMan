@@ -10,33 +10,53 @@
 <div class="row">
 <div class="col-4" style="border-right: 1px solid grey;">
 <div>
-My Projects <i class="fa fa-plus-square" aria-hidden="true" style="float:right;"></i>
+My Projects <span class="badge-pill badge-dark"><%= @projects.count %></span>
+ <%= link_to new_project_path, class: "fa fa-plus-square", style: "float:right;color:black;" do %>
+ <% end %>
 <hr>
 </div>
+<% if @project%>
+<% @projects.each do |project| %>
 <div class="card">
 <div class="card-body p-2 text-center">
-<h5>Project Name</h5>
-<h6>Team Name</h6>
-<p class="m-0">Created by Name</p>
+<h5><%= project.name %></h5>
+<h6><%= project.team.name %> </h6>
+<p class="m-0">Created by <%= project.user.name %></p>
 </div>
 </div>
+<% end %>
+<% else %>
+<h5>No projects currently</h5>
+<% end%>
+
 </div>
 <div class="col-4" style="border-right: 1px solid grey;">
 <div>
-My Teams <i class="fa fa-plus-square" aria-hidden="true" style="float:right;"></i>
+My Teams <span class="badge-pill badge-dark"><%= @teams.count %></span>
+<%= link_to new_team_path, class: "fa fa-plus-square", style: "float:right;color:black;" do %>
+ <% end %>
 <hr>
 </div>
+<% if @team %>
+<% @teams.each do |team|%>
 <div class="card">
 <div class="card-body p-2 text-center">
-<h5>Team Name</h5>
-<h6>0 members</h6>
-<p class="m-0">Created by Names</p>
+<h5><%= team.name %> </h5>
+<h6><%= team.user.count %></h6>
+<p class="m-0">Members:<hr> <%= safe_join(team.users.map { |user| user.name }, ', ') %></p>
 </div>
 </div>
+<% end %>
+<% else %>
+<h5>Not a member of any team</h5>
+<% end %>
+
 </div>
 <div class="col-4" style="">
 <div>
-My Activities <i class="fa fa-plus-square" aria-hidden="true" style="float:right;"></i>
+My Activities <span class="badge-pill badge-dark">0</span>
+<%= link_to "", class: "fa fa-plus-square", style: "float:right;color:black;" do %>
+ <% end %>
 <hr>
 </div>
 <div class="card">
