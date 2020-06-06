@@ -98,8 +98,10 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     erubi (1.9.0)
+    eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
     execjs (2.7.0)
+    ffi (1.12.2)
     ffi (1.12.2-x64-mingw32)
     formatador (0.2.5)
     globalid (0.4.2)
@@ -145,11 +147,15 @@ GEM
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.1)
+    msgpack (1.3.3)
     msgpack (1.3.3-x64-mingw32)
     multi_json (1.14.1)
+    mysql2 (0.5.3)
     mysql2 (0.5.3-x64-mingw32)
     nenv (0.3.0)
     nio4r (2.5.2)
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x64-mingw32)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.3)
@@ -203,6 +209,8 @@ GEM
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
+    sassc (2.3.0)
+      ffi (~> 1.9)
     sassc (2.3.0-x64-mingw32)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -252,12 +260,13 @@ GEM
       railties (>= 4.2)
     websocket-driver (0.7.2)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
     wysiwyg-rails (3.1.0)
       railties (>= 3.2, < 7.0)
     zeitwerk (2.3.0)
 
 PLATFORMS
+  ruby
   x64-mingw32
 
 DEPENDENCIES
