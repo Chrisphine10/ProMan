@@ -19,6 +19,7 @@ require("channels")
 import "bootstrap";
 import "./application.scss";
 
+console.log("Webpacker test");
 //= require_tree .
 //= require jquery 
 //= require popper
