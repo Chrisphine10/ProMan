@@ -11,36 +11,4 @@
  * It is generally better to create a new file per style scope.
  *
  */
-
- @import "bootstrap";
- @import "*";
- html {
-	 --blue: #007bff;
-	 --indigo: #6610f2;
-	 --purple: #6f42c1;
-	 --pink: #e83e8c;
-	 --red: #dc3545;
-	 --orange: #fd7e14;
-	 --yellow: #ffc107;
-	 --green: #28a745;
-	 --teal: #20c997;
-	 --cyan: #17a2b8;
-	 --white: #FFF;
-	 --gray: #575A7B;
-	 --gray-dark: #342E6C;
-	 --primary: #6658EA;
-	 --secondary: #575A7B;
-	 --success: #2CD4A2;
-	 --info: #17a2b8;
-	 --warning: #F5C070;
-	 --danger: #F9655B;
-	 --light: #F3F8FF;
-	 --dark: #1B1642;
-	 --primary-dark: #564CAF;
-	 --primary-light: #687DED;
-	 --breakpoint-xs: 0;
-	 --breakpoint-sm: 576px;
-	 --breakpoint-md: 768px;
-	 --breakpoint-lg: 992px;
-	 --breakpoint-xl: 1200px;
- }
+ 

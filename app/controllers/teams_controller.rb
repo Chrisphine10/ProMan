@@ -2,12 +2,12 @@
 
 class TeamsController < ApplicationController
   before_action :set_team, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[edit update destroy]
+  before_action :authenticate_user!, only: %i[edit new update destroy]
 
   # GET /teams
   # GET /teams.json
   def index
-    @teams = Team.all.order('created_at DESC')
+	@teams = Team.all.order('created_at DESC')
   end
 
   # GET /teams/1
@@ -16,8 +16,10 @@ class TeamsController < ApplicationController
 
   # GET /teams/new
   def new
-    @team = current_user.teams.build
-    @user = current_user
+	@pendings = Pending.where(user_id: current_user)
+	@pending = Pending.create
+	@team = current_user.teams.build
+	@user = current_user
   end
 
   # GET /teams/1/edit
@@ -27,8 +29,8 @@ class TeamsController < ApplicationController
   # POST /teams.json
   def create
     @team = current_user.teams.build(team_params)
-    @team.users << current_user
-
+	@team.users << current_user
+	
     respond_to do |format|
       if @team.save
         format.html { redirect_to root_path, notice: 'Team was successfully created.' }
@@ -68,7 +70,7 @@ class TeamsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_team
-    @team = Team.find(params[:id])
+	@team = Team.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.

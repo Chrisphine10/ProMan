@@ -1,34 +1,31 @@
 <section class="section">
-<%= content_tag :div, 
-  id: "team-form",
-  data: {
-	  id: @team.id,
-	  team: @team.to_json(except: [:id, :created_at, :updated_at]),
-	  users_attributes: @team.users.to_json(except: [:created_at, :updated_at ])
-  } do %> 
-
-<div class="container">
-	<div class="row">
-		<div class="col-5 mb-5 mt-2" :class="{formstatic: scrollPosition < 100, formFixed: scrollPosition > 100}">
-			<h5>Create a new team</h5>
-			<%= render 'form', team: @team %>
-		</div>
-		<div class="col-7" :class="{formstatic: scrollPosition < 100, formFixed: scrollPosition > 100}">
-			<h5>{{ team.name }}</h5>
-			<table style="width: 100%;" class="table-hover">
-				<thead>
-					<th>Name</th>
-					<th>Email</th>
-				</thead>
-				<tr class="user" v-for="(user, index) in team.users_attributes">
-				<td>{{ user.name }}</td>
-				<td>{{ user.email }}</td>
-				</tr>
-			</table>
+	<div class="container">
+		<div class="row">
+			<div class="col-5 mb-5 mt-2">
+				<h5>Create a new team</h5>
+				<%= render 'form', team: @team %>
+			</div>
+			<div>
+				<%= render 'pendings/form' %>
+			</div>
+			<div class="col-7">
+				<% if @team.name %>
+					<h5><%= @team.name %></h5>
+					<table style="width: 100%;" class="table-hover">
+						<thead>
+							<th>Name</th>
+							<th>Email</th>
+						</thead>
+						<tr class="user">
+							<td><%= @user.name %></td>
+							<td><%= @user.email %></td>
+						</tr>
+				</table>
+				<% else %>
+					<h3>No current team</h3>
+				<% end %>
+			</div>
 		</div>
 	</div>
-</div>
-    
-<% end %>
 </section>
 

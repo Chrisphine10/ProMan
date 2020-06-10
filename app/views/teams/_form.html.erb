@@ -12,51 +12,46 @@
 	they can supply their own unique password.
 	</p>
 </div>
-
-<div v-for="(user, index) in teams.users_attributes">
-	<div v-if="user._destroy == '1'">
-	{{ user.name }} will be removed
-	<button v-on:click="undoRemove(index)" class="btn btn-outline-secondary">Undo</button>
+<div>
+	<div>	  
+	<div class="field">
+		<div class="control">
+		<label><%= current_user.name %></label>
+			<button class="btn btn-danger">Remove</button>
+		</div>
 	</div>
-
-	<div v-else>
+	</div>
+	<form action="/pendings" method="POST">
 		<div class="field">
 			<div class="control">
 				<label class="label">Name</label>
-				<input type="text" class="form-control" v-model="user.name">
+				<input name="name" required type="text" class="form-control">
 			</div>
 		</div>
 
 		<div class="field">
 			<div class="control">
 				<label class="label">Email</label>
-				<input type="text" class="form-control" v-model="user.email">
-			    <div id="error" class="has-text-danger" v-if="errors.length"> {{ error }} </div>
+				<input name="email" required type="text" class="form-control">
 			</div>
 		</div>
-
-		<input type="hidden" value="<%= current_user.id %>">
-
+		<hr>
+		<input name="user_id" type="hidden" value="<%= current_user.id %>">
 		<div class="field">
 			<div class="control">
-				<button v-on:click="removeUser(index)" class="form-control mt-2" style="width: 140px;">Remove</button>
+				<button class="btn-sm btn-primary">Add User</button>
 			</div>
 		</div>
-	</div>
+		</form>
 </div>
-<hr>
-<div class="field">
-	<div class="control">
-		<button v-on:click="addUser" class="btn-sm btn-primary">Add User</button>
-	</div>
-</div>
+
 <hr>
 <div class="field">
 	<div class="control">
 		<% if current_page?(new_team_path) %>
-			<button v-on:click="saveTeam" class="btn btn-success">Create Team</button>
+			<button class="btn btn-success">Create Team</button>
 		<% else %>
-			<button v-on:click="saveTeam" class="btn btn-success">Save Team</button>
+			<button class="btn btn-success">Save Team</button>
 		<% end %>
 	</div>
 
